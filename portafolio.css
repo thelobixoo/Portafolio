@@ -637,6 +637,7 @@ footer a {
     #sobremi {
         padding: 50px 0;
         display: block;
+	overflow: hidden;
     }
 
     #sobremi .contenedor-foto {
@@ -675,6 +676,7 @@ footer a {
 
     .contenedor-skills {
         padding: 150px 20px;
+	overflow: hidden;
     }
 
     #portafolio {
