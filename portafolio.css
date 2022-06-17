@@ -225,6 +225,8 @@ html{
     padding: 100px 0;
     text-align: center; 
     height: auto;
+    position:relative;
+    z-index:1;
 }
    
 #servicios .titulo-seccion{
@@ -239,20 +241,46 @@ html{
     display: flex;
     justify-content: space-between;
     max-width: 1100px;
-    margin: 30px auto;
+    margin: 20px auto;
 }
 
 #servicios .fila .servicios{
-    max-width: 350px;
-    background-color: #f3f3f3;
-    padding: 30px;
-    margin: 0 5px;
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+    color: #fff;
+    padding: 50px;
+    margin: 0 8px;
     border-radius: 5px;
-    transition: .5s;
 }
 
-#servicios .fila .servicios:hover{
-    box-shadow: 5px 5px 10px #565656,-5px -5px 10px #8a8a8a ;
+#servicios .fila .servicios:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  -webkit-animation: animatedgradient 3s ease alternate infinite;
+          animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+  
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #servicios .fila .servicios h4 {
@@ -265,13 +293,13 @@ html{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #d3d3d3;
+    background-color:#000;
     padding: 20px;
     margin-bottom: 25px;
 }
 
 #servicios .fila .servicios hr {
-    width: 30%;
+    width: 35%;
     margin: auto;
     color: #000;
     margin-bottom: 25px;
@@ -285,7 +313,7 @@ html{
 }
 
 #servicios .fila .servicios p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 22px;
 }
 
